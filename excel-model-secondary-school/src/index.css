@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  @media print {
+    body {
+      background: white !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    /* Hide everything */
+    body * {
+      visibility: hidden !important;
+    }
+
+    /* Show only the report and its children */
+    #printable-report,
+    #printable-report *,
+    #printable-scoresheet,
+    #printable-scoresheet * {
+      visibility: visible !important;
+    }
+
+    #printable-report,
+    #printable-scoresheet {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
